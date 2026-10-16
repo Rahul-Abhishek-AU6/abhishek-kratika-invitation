@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#FAF8F3">
+  <title>Abhishek & Kratika — Engagement Invitation | Lacy Deluxe</title>
+  <meta name="description" content="You are cordially invited to celebrate the engagement ceremony of Abhishek & Kratika on Tuesday, 24th November, 2026 in Patna.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+  <meta property="og:title" content="Abhishek & Kratika — Engagement Reveal">
+  <meta property="og:description" content="Two Hearts, One Forever. 24th November, 2026 | Patna">
+  <meta property="og:image" content="images/couple_2_hd.jpg">
+
+  <!-- Invitely Lacy Deluxe Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="envelope-active">
+
+  <!-- Ambient Floating Petals & Pearl Shimmer -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Floating Audio Player (Invitely Style) -->
+  <div class="floating-audio-wrap">
+    <button id="musicToggleBtn" class="audio-pill-btn" aria-label="Toggle Background Music">
+      <div class="sound-wave">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <span class="audio-label">Melody</span>
+    </button>
+  </div>
+
+  <!-- ================= 3D LACY ENVELOPE OPENING OVERLAY ================= -->
+  <div id="envelopeOverlay" class="envelope-overlay">
+    <div class="envelope-scene">
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        
+        <!-- Back of Envelope -->
+        <div class="env-back"></div>
+
+        <!-- The Invitation Card Peeking Inside -->
+        <div class="env-card-preview" id="envCardPreview">
+          <div class="preview-lace-border"></div>
+          <div class="preview-monogram">A & K</div>
+          <div class="preview-names">Abhishek &amp; Kratika</div>
+          <div class="preview-date">24 November 2026 • Patna</div>
+        </div>
+
+        <!-- Flap Top (Triangular, folds 180deg on open) -->
+        <div class="env-flap" id="envFlap">
+          <!-- Lace edging SVG on flap -->
+          <svg class="flap-lace" viewBox="0 0 300 30" preserveAspectRatio="none">
+            <path d="M0,0 Q15,25 30,0 Q45,25 60,0 Q75,25 90,0 Q105,25 120,0 Q135,25 150,0 Q165,25 180,0 Q195,25 210,0 Q225,25 240,0 Q255,25 270,0 Q285,25 300,0" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.65"/>
+          </svg>
+        </div>
+
+        <!-- Envelope Front Pocket (Left, Right, Bottom Triangles) -->
+        <div class="env-front-left"></div>
+        <div class="env-front-right"></div>
+        <div class="env-front-bottom">
+          <!-- Laser-cut lace ornament on front pocket -->
+          <div class="front-lace-emboss"></div>
+        </div>
+
+        <!-- Mother of Pearl / Gold Wax Seal -->
+        <div class="env-seal-container" id="envSealContainer">
+          <button id="openEnvelopeBtn" class="mother-of-pearl-seal" title="Tap to Open Invitation">
+            <div class="seal-pearl-ring"></div>
+            <div class="seal-disc">
+              <span class="seal-logo">A &amp; K</span>
+              <span class="seal-icon">✨</span>
+            </div>
+          </button>
+          <div class="seal-tap-hint">
+            <span>Tap to open invitation</span>
+            <div class="hint-arrow">&darr;</div>
+          </div>
+        </div>
+
+        <!-- Recipient Tag / Callout -->
+        <div class="env-recipient-tag">
+          <span class="tag-title">Engagement Invitation</span>
+          <span class="tag-names">Abhishek &amp; Kratika</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= INVITELY LACY DELUXE PHONE/CARD CONTAINER ================= -->
+  <div class="invitely-app-container">
+    <div class="invitely-card" id="invitelyCard">
+
+      <!-- TOP LACE BANNER & PEARL BORDER -->
+      <div class="lace-corner-ornament top-left"></div>
+      <div class="lace-corner-ornament top-right"></div>
+
+      <!-- 1. COVER / HERO BANNER -->
+      <section class="section cover-section text-center">
+        <!-- Monogram Badge -->
+        <div class="monogram-emblem">
+          <div class="emblem-inner">
+            <span class="monogram-text">A &amp; K</span>
+          </div>
+        </div>
+
+        <p class="eyebrow-text">We are getting engaged</p>
+
+        <!-- Signature Calligraphy Names (Alex Brush) -->
+        <h1 class="couple-title">
+          <span class="calligraphy-name">Abhishek</span>
+          <span class="calligraphy-amp">&amp;</span>
+          <span class="calligraphy-name">Kratika</span>
+        </h1>
+
+        <div class="date-badge-pill">
+          <span class="date-sparkle">✦</span>
+          <span>Tuesday, 24th November, 2026</span>
+          <span class="date-sparkle">✦</span>
+        </div>
+
+        <p class="venue-brief">Heart of Bihar, Patna</p>
+
+        <!-- Framed Hero Portrait with Pearl Border -->
+        <div class="hero-portrait-frame">
+          <div class="portrait-pearl-beads"></div>
+          <div class="portrait-arch">
+            <img id="heroCoupleImg" src="images/couple_2_hd.jpg" alt="Abhishek & Kratika" class="hero-photo">
+            <div class="photo-overlay-shimmer"></div>
+          </div>
+          <div class="photo-switcher-dots" id="heroPhotoDots">
+            <span class="dot active" data-src="images/couple_2_hd.jpg"></span>
+            <span class="dot" data-src="images/couple_1_hd.jpg"></span>
+            <span class="dot" data-src="images/couple_3_hd.jpg"></span>
+            <span class="dot" data-src="images/couple_4_hd.jpg"></span>
+            <span class="dot" data-src="images/couple_5_hd.jpg"></span>
+          </div>
+        </div>
+
+        <!-- Romantic Quote -->
+        <div class="romantic-quote-box">
+          <span class="quote-ornament">“</span>
+          <p class="quote-body">
+            Two souls with but a single thought,<br>
+            two hearts that beat as one.
+          </p>
+          <span class="quote-author">— Save the Date —</span>
+        </div>
+
+        <!-- Fast Action Pills -->
+        <div class="quick-action-row">
+          <a href="video-invite.html" class="action-pill gold-highlight"><span class="icon">🎬</span> Watch Video</a>
+          <a href="#eventSection" class="action-pill"><span class="icon">📍</span> Details</a>
+          <a href="#rsvpSection" class="action-pill primary"><span class="icon">💌</span> RSVP</a>
+          <button id="addToCalQuickBtn" class="action-pill"><span class="icon">📅</span> Calendar</button>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+          <circle cx="130" cy="12" r="2" fill="#D4AF37" opacity="0.6"/>
+          <circle cx="170" cy="12" r="2" fill="#D4AF37" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- 2. COUNTDOWN TIMER (LACY DELUXE PEARL CARDS) -->
+      <section class="section countdown-section text-center">
+        <span class="section-tag">COUNTDOWN</span>
+        <h3 class="section-sub-title">Until We Exchange Rings</h3>
+
+        <div class="countdown-circles">
+          <div class="pearl-circle">
+            <span class="num" id="cdDays">00</span>
+            <span class="lbl">Days</span>
+          </div>
+          <div class="circle-separator">:</div>
+          <div class="pearl-circle">
+            <span class="num" id="cdHours">00</span>
+            <span class="lbl">Hours</span>
+          </div>
+          <div class="circle-separator">:</div>
+          <div class="pearl-circle">
+            <span class="num" id="cdMins">00</span>
+            <span class="lbl">Mins</span>
+          </div>
+          <div class="circle-separator">:</div>
+          <div class="pearl-circle">
+            <span class="num" id="cdSecs">00</span>
+            <span class="lbl">Secs</span>
+          </div>
+        </div>
+        <p class="countdown-hint">24 November 2026 • 18:30 IST • Patna</p>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 2.5 ROYAL VIDEO INVITATION SECTION (PINTEREST REPLICA THEME) -->
+      <section class="section video-feature-section text-center" id="videoSection">
+        <span class="section-tag">CINEMA INVITATION</span>
+        <h2 class="section-heading">Watch The Invitation</h2>
+        <p class="section-sub-desc">Royal engagement reveal set to "Aaj Sajeya Ve"</p>
+
+        <div class="embedded-video-card">
+          <div class="embedded-video-frame">
+            <video id="inlineEngagementVideo" playsinline preload="metadata" poster="thumb_scene2.jpg" controls>
+              <source src="abhishek_kratika_engagement_video.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-cta-buttons">
+            <a href="abhishek_kratika_engagement_video.mp4" download="Abhishek_Kratika_Engagement_Video.mp4" class="lacy-btn primary">
+              <span class="btn-icon">📥</span>
+              <span>Download MP4 Video (1080p HD)</span>
+            </a>
+            <a href="video-invite.html" class="lacy-btn outline">
+              <span class="btn-icon">📱</span>
+              <span>Open Cinema Story &amp; Chapters Player</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 3. THE COUPLE (BRIDE & GROOM PROFILES) -->
+      <section class="section couple-profiles-section">
+        <div class="text-center">
+          <span class="section-tag">THE COUPLE</span>
+          <h2 class="section-heading">Abhishek &amp; Kratika</h2>
+        </div>
+
+        <!-- Groom Card -->
+        <div class="person-profile-card">
+          <div class="person-avatar-wrap">
+            <img id="groomDisplayImg" src="images/groom_1_hd.jpg" alt="Abhishek - The Groom" class="person-avatar">
+            <div class="avatar-pearl-ring"></div>
+          </div>
+          <div class="person-details">
+            <span class="person-role">The Groom</span>
+            <h3 class="person-name">Abhishek</h3>
+            <p class="person-bio">
+              "When I saw Kratika's smile, every dream I had found its purpose. Looking forward to holding her hand forever."
+            </p>
+            <div class="mini-pose-thumbnails" id="groomThumbList">
+              <img src="images/groom_1.jpg" data-src="images/groom_1_hd.jpg" class="mini-thumb active" alt="Pose 1">
+              <img src="images/groom_2.jpg" data-src="images/groom_2_hd.jpg" class="mini-thumb" alt="Pose 2">
+              <img src="images/groom_3.jpg" data-src="images/groom_3_hd.jpg" class="mini-thumb" alt="Pose 3">
+              <img src="images/groom_4.jpg" data-src="images/groom_4_hd.jpg" class="mini-thumb" alt="Pose 4">
+              <img src="images/groom_5.jpg" data-src="images/groom_5_hd.jpg" class="mini-thumb" alt="Pose 5">
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Ring Interlock -->
+        <div class="interlock-ring-symbol text-center">
+          <span class="ring-icon">💍</span>
+        </div>
+
+        <!-- Bride Card -->
+        <div class="person-profile-card">
+          <div class="person-avatar-wrap">
+            <img id="brideDisplayImg" src="images/bride_3_hd.jpg" alt="Kratika - The Bride" class="person-avatar">
+            <div class="avatar-pearl-ring"></div>
+          </div>
+          <div class="person-details">
+            <span class="person-role">The Bride</span>
+            <h3 class="person-name">Kratika</h3>
+            <p class="person-bio">
+              "Abhishek brings so much peace, laughter, and certainty into my world. 24th November is the celebration of our forever."
+            </p>
+            <div class="mini-pose-thumbnails" id="brideThumbList">
+              <img src="images/bride_3.jpg" data-src="images/bride_3_hd.jpg" class="mini-thumb active" alt="Pose 3">
+              <img src="images/bride_1.jpg" data-src="images/bride_1_hd.jpg" class="mini-thumb" alt="Pose 1">
+              <img src="images/bride_2.jpg" data-src="images/bride_2_hd.jpg" class="mini-thumb" alt="Pose 2">
+              <img src="images/bride_4.jpg" data-src="images/bride_4_hd.jpg" class="mini-thumb" alt="Pose 4">
+              <img src="images/bride_5.jpg" data-src="images/bride_5_hd.jpg" class="mini-thumb" alt="Pose 5">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 4. EVENT DETAILS & VENUE (PATNA) -->
+      <section class="section event-section" id="eventSection">
+        <div class="text-center">
+          <span class="section-tag">THE CEREMONY</span>
+          <h2 class="section-heading">Event Details &amp; Venue</h2>
+        </div>
+
+        <div class="lacy-event-card">
+          <div class="event-pearl-border"></div>
+
+          <div class="event-header-badge">
+            <span class="badge-icon">💍</span>
+            <h4>Mangal Parinay &amp; Ring Exchange</h4>
+          </div>
+
+          <div class="event-info-list">
+            <div class="event-info-item">
+              <span class="e-icon">📅</span>
+              <div class="e-text">
+                <strong>Date</strong>
+                <span>Tuesday, 24th November, 2026</span>
+              </div>
+            </div>
+
+            <div class="event-info-item">
+              <span class="e-icon">⏰</span>
+              <div class="e-text">
+                <strong>Time</strong>
+                <span>6:30 PM Onwards (Evening)</span>
+              </div>
+            </div>
+
+            <div class="event-info-item">
+              <span class="e-icon">📍</span>
+              <div class="e-text">
+                <strong>Venue</strong>
+                <span>Heart of Bihar</span>
+                <small>Patna, Bihar</small>
+              </div>
+            </div>
+
+            <div class="event-info-item">
+              <span class="e-icon">👗</span>
+              <div class="e-text">
+                <strong>Dress Code</strong>
+                <span>Regal Indian / Indo-Western Royalty</span>
+                <small>Colors: Ivory, Dusty Rose, Champagne Gold &amp; Maroon</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="event-button-stack">
+            <a href="https://maps.google.com/?q=Heart+of+Bihar+Patna+Bihar" target="_blank" rel="noopener" class="lacy-btn primary">
+              <span class="btn-icon">🗺️</span>
+              <span>Open in Google Maps / Directions</span>
+            </a>
+            <button id="calDownloadBtn" class="lacy-btn outline">
+              <span class="btn-icon">📅</span>
+              <span>Add to Calendar (.ics / Google)</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 5. PROGRAM FLOW / ITINERARY (AKIŞ) -->
+      <section class="section flow-section">
+        <div class="text-center">
+          <span class="section-tag">PROGRAM FLOW</span>
+          <h2 class="section-heading">Evening Schedule</h2>
+        </div>
+
+        <div class="program-timeline">
+          <div class="program-item">
+            <div class="time-pill">18:30</div>
+            <div class="prog-content">
+              <h4>Welcome &amp; Shagun Mocktails</h4>
+              <p>Traditional Shehnai music, fragrant flower shower &amp; welcome drinks.</p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="time-pill">19:30</div>
+            <div class="prog-content">
+              <h4>Grand Entry of Abhishek &amp; Kratika</h4>
+              <p>Couple's regal walk-in accompanied by cold pyros &amp; acoustic music.</p>
+            </div>
+          </div>
+
+          <div class="program-item highlight">
+            <div class="time-pill gold">20:15</div>
+            <div class="prog-content">
+              <h4>The Ring Ceremony &amp; Cake Cutting</h4>
+              <p>The auspicious moment of exchanging engagement rings &amp; family blessings.</p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="time-pill">21:00</div>
+            <div class="prog-content">
+              <h4>Musical Sangeet &amp; Dance Floor</h4>
+              <p>Celebration on the dance floor with family &amp; friends.</p>
+            </div>
+          </div>
+
+          <div class="program-item">
+            <div class="time-pill">21:30</div>
+            <div class="prog-content">
+              <h4>Royal Gala Dinner</h4>
+              <p>Exquisite multi-cuisine royal feast &amp; desserts in Patna.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 6. PHOTO GALLERY (15 MOMENTS LOOKBOOK) -->
+      <section class="section gallery-section">
+        <div class="text-center">
+          <span class="section-tag">GALLERY</span>
+          <h2 class="section-heading">Moments of Love</h2>
+          <p class="section-sub-desc">Frames of romance, joy, and candid warmth</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="lacy-filter-tabs">
+          <button class="lacy-tab active" data-filter="all">All (15)</button>
+          <button class="lacy-tab" data-filter="couple">The Couple</button>
+          <button class="lacy-tab" data-filter="groom">Abhishek</button>
+          <button class="lacy-tab" data-filter="bride">Kratika</button>
+        </div>
+
+        <div class="lacy-gallery-grid" id="lacyGalleryGrid">
+          <!-- 5 Couple Photos -->
+          <div class="gallery-photo-card" data-category="couple" data-caption="Two souls, one destiny — Abhishek & Kratika">
+            <img src="images/couple_2_hd.jpg" alt="Abhishek & Kratika Hug" loading="lazy">
+            <div class="card-caption">Pure Love</div>
+          </div>
+          <div class="gallery-photo-card" data-category="couple" data-caption="Together forever — Royal Engagement Portrait">
+            <img src="images/couple_1_hd.jpg" alt="Standing Together" loading="lazy">
+            <div class="card-caption">The Royal Couple</div>
+          </div>
+          <div class="gallery-photo-card" data-category="couple" data-caption="Sitting together on marble steps">
+            <img src="images/couple_3_hd.jpg" alt="Sitting on stairs" loading="lazy">
+            <div class="card-caption">Stairway to Forever</div>
+          </div>
+          <div class="gallery-photo-card" data-category="couple" data-caption="Intimate gaze of certainty">
+            <img src="images/couple_4_hd.jpg" alt="Forehead glance" loading="lazy">
+            <div class="card-caption">Whispers of Love</div>
+          </div>
+          <div class="gallery-photo-card" data-category="couple" data-caption="Laughter and playful embrace">
+            <img src="images/couple_5_hd.jpg" alt="Playful hug" loading="lazy">
+            <div class="card-caption">Playful Hearts</div>
+          </div>
+
+          <!-- 5 Groom Photos -->
+          <div class="gallery-photo-card" data-category="groom" data-caption="Abhishek — The Regal Groom">
+            <img src="images/groom_1_hd.jpg" alt="Abhishek Portrait" loading="lazy">
+            <div class="card-caption">Abhishek</div>
+          </div>
+          <div class="gallery-photo-card" data-category="groom" data-caption="Moments away from forever">
+            <img src="images/groom_2_hd.jpg" alt="Groom with watch" loading="lazy">
+            <div class="card-caption">Moments Away</div>
+          </div>
+          <div class="gallery-photo-card" data-category="groom" data-caption="Charismatic and thoughtful">
+            <img src="images/groom_3_hd.jpg" alt="Groom chin resting" loading="lazy">
+            <div class="card-caption">The Visionary</div>
+          </div>
+          <div class="gallery-photo-card" data-category="groom" data-caption="Celebration ready">
+            <img src="images/groom_4_hd.jpg" alt="Groom with sunglasses" loading="lazy">
+            <div class="card-caption">Cool &amp; Confident</div>
+          </div>
+          <div class="gallery-photo-card" data-category="groom" data-caption="Candid laughter of the groom">
+            <img src="images/groom_5_hd.jpg" alt="Groom candid" loading="lazy">
+            <div class="card-caption">Pure Joy</div>
+          </div>
+
+          <!-- 5 Bride Photos -->
+          <div class="gallery-photo-card" data-category="bride" data-caption="Kratika — The Radiant Bride">
+            <img src="images/bride_3_hd.jpg" alt="Kratika Radiant Smile" loading="lazy">
+            <div class="card-caption">Radiant Kratika</div>
+          </div>
+          <div class="gallery-photo-card" data-category="bride" data-caption="Grace in every detail">
+            <img src="images/bride_1_hd.jpg" alt="Bride Portrait" loading="lazy">
+            <div class="card-caption">Graceful Bride</div>
+          </div>
+          <div class="gallery-photo-card" data-category="bride" data-caption="Timeless charm in rose lehenga">
+            <img src="images/bride_2_hd.jpg" alt="Bride Shy Smile" loading="lazy">
+            <div class="card-caption">Timeless Charm</div>
+          </div>
+          <div class="gallery-photo-card" data-category="bride" data-caption="Golden hour sparkle">
+            <img src="images/bride_4_hd.jpg" alt="Bride Golden Hour" loading="lazy">
+            <div class="card-caption">Sparkle &amp; Glow</div>
+          </div>
+          <div class="gallery-photo-card" data-category="bride" data-caption="Dreaming of tomorrow">
+            <img src="images/bride_5_hd.jpg" alt="Bride Dreaming" loading="lazy">
+            <div class="card-caption">Dreaming in Rose</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 7. RSVP SECTION (LCV / KATILIM BİLDİRİMİ) -->
+      <section class="section rsvp-section" id="rsvpSection">
+        <div class="text-center">
+          <span class="section-tag">RSVP</span>
+          <h2 class="section-heading">Will You Join Us?</h2>
+          <p class="section-sub-desc">Please kindly confirm your attendance by 10th November 2026.</p>
+        </div>
+
+        <div class="lacy-form-container">
+          <form id="lacyRsvpForm">
+            <div class="lacy-input-group">
+              <label for="rsvpName">Your Full Name</label>
+              <input type="text" id="rsvpName" placeholder="e.g. Priyanshu Roy" required>
+            </div>
+
+            <div class="lacy-input-group">
+              <label for="rsvpPhone">Phone Number / WhatsApp</label>
+              <input type="tel" id="rsvpPhone" placeholder="+91 98765 43210" required>
+            </div>
+
+            <div class="lacy-input-group">
+              <label>Attendance Confirmation</label>
+              <div class="attendance-toggle-row">
+                <label class="toggle-choice">
+                  <input type="radio" name="attendStatus" value="attending" checked>
+                  <span class="toggle-btn">🎉 Yes, I'm Coming!</span>
+                </label>
+                <label class="toggle-choice">
+                  <input type="radio" name="attendStatus" value="declined">
+                  <span class="toggle-btn">💌 Sorry, Celebrating From Afar</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="lacy-input-group">
+              <label for="guestCount">Number of Attendees</label>
+              <select id="guestCount">
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Persons</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons (Family)</option>
+                <option value="5+">5+ Persons</option>
+              </select>
+            </div>
+
+            <div class="lacy-input-group">
+              <label for="songRequest">🎵 Song Request for Abhishek &amp; Kratika's Dance</label>
+              <input type="text" id="songRequest" placeholder="e.g. Kesariya, Din Shagna Da, Raatan Lambiyan">
+            </div>
+
+            <button type="submit" class="lacy-btn primary full-width">
+              <span>Send RSVP Confirmation</span>
+              <span class="btn-sparkle">✨</span>
+            </button>
+          </form>
+
+          <div id="rsvpDoneNotice" class="rsvp-done-box" style="display: none;">
+            <div class="done-icon">💍</div>
+            <h3>Thank You! RSVP Received</h3>
+            <p>We are delighted to celebrate this auspicious evening with you in Patna on 24th November 2026!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DELICATE LACE DIVIDER -->
+      <div class="lace-divider">
+        <svg viewBox="0 0 300 24" class="lace-svg">
+          <path d="M0,12 Q30,0 60,12 T120,12 T180,12 T240,12 T300,12" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="150" cy="12" r="3.5" fill="#D4AF37"/>
+        </svg>
+      </div>
+
+      <!-- 8. MEMORY & BLESSINGS WALL (ANI DUVARI) -->
+      <section class="section wishes-section">
+        <div class="text-center">
+          <span class="section-tag">WISHES &amp; BLESSINGS</span>
+          <h2 class="section-heading">Memory Wall</h2>
+          <p class="section-sub-desc">Leave a heartfelt note for Abhishek &amp; Kratika</p>
+        </div>
+
+        <div class="wishes-post-card">
+          <form id="memoryForm">
+            <div class="lacy-input-group">
+              <input type="text" id="memName" placeholder="Your Name" required>
+            </div>
+            <div class="lacy-input-group">
+              <textarea id="memMsg" rows="3" placeholder="Write your warm blessings for the couple..." required></textarea>
+            </div>
+            <div class="charm-select-row">
+              <span class="charm-label">Charm:</span>
+              <label class="charm-opt"><input type="radio" name="charm" value="🌹" checked><span>🌹</span></label>
+              <label class="charm-opt"><input type="radio" name="charm" value="🧿"><span>🧿</span></label>
+              <label class="charm-opt"><input type="radio" name="charm" value="🥂"><span>🥂</span></label>
+              <label class="charm-opt"><input type="radio" name="charm" value="💍"><span>💍</span></label>
+              <label class="charm-opt"><input type="radio" name="charm" value="✨"><span>✨</span></label>
+            </div>
+            <button type="submit" class="lacy-btn outline full-width">
+              <span>Post Blessing</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="memory-wall-feed" id="memoryFeed">
+          <!-- Dynamically populated cards -->
+        </div>
+      </section>
+
+      <!-- 9. FOOTER & SHARING -->
+      <footer class="lacy-card-footer text-center">
+        <div class="footer-monogram">A &amp; K</div>
+        <p class="footer-couple-names">Abhishek &amp; Kratika</p>
+        <p class="footer-date-line">24th November, 2026 • Patna, Bihar</p>
+
+        <div class="share-row">
+          <button id="waShareBtn" class="share-pill whatsapp">
+            <span>Share on WhatsApp</span>
+          </button>
+          <button id="copyInviteBtn" class="share-pill copy">
+            <span>Copy Link</span>
+          </button>
+        </div>
+
+        <div class="lace-end-flourish">❧ ❈ ❧</div>
+        <p class="footer-tiny">Created with love for Abhishek &amp; Kratika's Engagement</p>
+      </footer>
+
+      <!-- BOTTOM LACE CORNER ORNAMENTS -->
+      <div class="lace-corner-ornament bottom-left"></div>
+      <div class="lace-corner-ornament bottom-right"></div>
+
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lacyLightbox" class="lacy-lightbox">
+    <button id="lacyCloseBtn" class="lb-close">&times;</button>
+    <div class="lb-inner">
+      <img id="lbImg" src="" alt="Enlarged photo">
+      <p id="lbCaption" class="lb-caption"></p>
+    </div>
+  </div>
+
+  <!-- TOAST FEEDBACK -->
+  <div id="toastBox" class="toast-box"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
